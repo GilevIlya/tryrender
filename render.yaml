@@ -1,0 +1,19 @@
+services:
+  - type: web
+    name: telegram-weather-exchange-bot
+    env: python
+    region: frankfurt
+    plan: free
+    buildCommand: pip install -r requirements.txt
+    startCommand: python bot.py
+    envVars:
+      - key: TOKEN
+        value: "YOUR_BOT_TOKEN_HERE"
+      - key: DB_USER
+        value: "YOUR_DB_USER"
+      - key: DB_PASSWORD
+        value: "YOUR_DB_PASSWORD"
+      - key: DB_NAME
+        value: "YOUR_DB_NAME"
+      - key: DB_HOST
+        value: "YOUR_DB_HOST"
